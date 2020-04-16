@@ -25,6 +25,9 @@ data-dev.sqlite
 
 .vscode/
 flasky.py
+Procfile
+
+
 
 
 # Distribution / packaging
