@@ -19,6 +19,8 @@ __pycache__/
 # Enviroment
 .env
 env/
+venv/
+
 .vscode/
 
 # Distribution / packaging
