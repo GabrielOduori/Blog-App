@@ -19,8 +19,8 @@ Blog application with Python,Flask and PostreSQL
 ### Cloning
 * In your terminal:
         
-        $ git clone https://github.com/GabrielOduori/Blog-Post
-        $ cd Blog-Post
+        $ git clone https://github.com/GabrielOduori/Blog-App
+        $ cd Blog-App
 
 ## Running the Application
 * Creating the virtual environment
@@ -32,7 +32,8 @@ Blog application with Python,Flask and PostreSQL
         
 * Installing Flask and other Modules
 - While in the virtal environment install all the requirements by running 
-$ pip install -r requirements.txt
+
+        $ pip install -r requirements.txt
 
 
 * Database
