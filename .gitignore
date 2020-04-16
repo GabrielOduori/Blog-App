@@ -20,8 +20,12 @@ __pycache__/
 .env
 env/
 venv/
+data-dev.sqlite
+
 
 .vscode/
+flasky.py
+
 
 # Distribution / packaging
 .Python
