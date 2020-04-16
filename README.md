@@ -35,11 +35,11 @@ Blog application with Python,Flask and PostreSQL
 $ pip install -r requirements.txt
 
 * Database
- $ flask db init
- $ flask db migrate -m"Message"
- $ flask db upgrade 
+        $ flask db init
+        $ flask db migrate -m"Message"
+        $ flask db upgrade 
 
- * Running the app
- $ set FLASK_APP=blog-app.py (export FLASK_APP=blog-app.py )
- $ set FLASK_DEBUG=1 (export FLASK_DEBUG=1 )
- $ flask run
+* Running the app
+        $ set FLASK_APP=blog-app.py (export FLASK_APP=blog-app.py )
+        $ set FLASK_DEBUG=1 (export FLASK_DEBUG=1 )
+        $ flask run
