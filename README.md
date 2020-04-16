@@ -34,6 +34,14 @@ Blog application with Python,Flask and PostreSQL
 - While in the virtalenvironment install all the requirements by running 
 $ pip install -r requirements.txt
 
+
+* Creating the virtual environment
+
+        $ python3 -m pip install --user virtualenv ( on a Mac)
+        $ python3 -m virtualenv env
+        $ source env/bin/activate
+        $(For other operating systems, see https://packaging.python.org/guides/installing-using-pip-and-virtualenv/)
+    
 * Database
         $ flask db init
         $ flask db migrate -m"Message"
