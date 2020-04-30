@@ -18,8 +18,13 @@ class Role(db.Model):
     users = db.relationship('User', backref='role', lazy='dynamic')
 
 
-    def __repr__(self):
-        return '<Role %r>' % self.name
+    def __repr__(self,**kwargs):
+        super(Role, self).__init__(**kwargs)
+        if self.permissions is None:
+            self.permissions = 0
+        # return '<Role %r>' % self.name
+
+  
 
 
 class User(UserMixin, db.Model):
@@ -65,6 +70,12 @@ class User(UserMixin, db.Model):
         db.session.add(self)
         return True
 
+class Permission:
+    FOLLOW = 1
+    COMMENT = 2
+    WRITE = 4
+    MODERATE = 8
+    ADMIN = 16
 
 
 @login_manager.user_loader
