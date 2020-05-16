@@ -1,3 +1,4 @@
+from datetime import datetime
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer 
 from flask import current_app
 from . import db, login_manager
@@ -12,9 +13,6 @@ class Permission:
     WRITE = 4
     MODERATE = 8
     ADMIN = 16
-
-
-
 
 
 class Role(db.Model):
@@ -74,6 +72,7 @@ class Role(db.Model):
 
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
+    __table_args__ = {'extend_existing': True} 
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(64),unique=True,index=True)
     username = db.Column(db.String(64), unique=True, index=True)
@@ -85,14 +84,6 @@ class User(UserMixin, db.Model):
     about_me = db.Column(db.Text())
     member_since  = db.Column(db.DateTime(),default=datetime.utcnow)
     last_seen =  db.Column(db.DateTime(),default=datetime.utcnow)
-
-
-
-    # initializing last seen field.
-    def ping(self):
-        self.last_seen = datetime.utcnow()
-        db.session.add(self)
-        db.session.commit()
 
 
 
@@ -141,6 +132,14 @@ class User(UserMixin, db.Model):
 
     def is_administrator(self):
         return self.can(Permission.ADMIN)
+
+    
+    # initializing last seen field.
+    def ping(self):
+        self.last_seen = datetime.utcnow()
+        db.session.add(self)
+        db.session.commit()
+
 
     def __repr__(self):
         return '<User %r>' % self.username
