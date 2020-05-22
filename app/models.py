@@ -143,7 +143,11 @@ class User(UserMixin, db.Model):
         db.session.commit()
 
 
-    def gravator(self, size=100, default='identaticon',rating='g')
+    def gravator(self, size=100, default='identaticon',rating='g'):
+        url = 'https://secure.gravatar.com/avatar'
+        hash = hashlib.md5(self.email.lower().encode('utf-8')).hexdigest()
+        return '{url}/{hash}?s={size}&d={default}&r={rating}'.format(
+            url=url, hash=hash, size=size, default=default, rating=rating)
 
 
     def __repr__(self):
