@@ -1,11 +1,13 @@
 from datetime import datetime
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer 
-from flask import current_app
+from flask import current_app, request
 from . import db, login_manager
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin, AnonymousUserMixin
 from . import login_manager
 from .import db
+import hashlib
+
 
 class Permission:
     FOLLOW = 1
@@ -139,6 +141,9 @@ class User(UserMixin, db.Model):
         self.last_seen = datetime.utcnow()
         db.session.add(self)
         db.session.commit()
+
+
+    def gravator(self, size=100, default='identaticon',rating='g')
 
 
     def __repr__(self):
