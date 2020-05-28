@@ -24,7 +24,7 @@ def index():
     )
     # posts = Post.query.order_by(Post.timestamp.desc()).all()
     post   =pagination.items
-    return render_template('index.html', form=form, posts=posts
+    return render_template('index.html', form=form, posts=posts,
     pagination=pagination)
 
     
