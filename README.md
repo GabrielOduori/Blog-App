@@ -1,5 +1,5 @@
 # Blog-app
-Blog application with Python,Flask and PostreSQL
+Blog application with Python,Flask and PostgreSQL
 
 
 
